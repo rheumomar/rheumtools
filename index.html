@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rheum Clinic Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-full mx-auto">
+    <h1 class="text-2xl font-bold mb-4 text-center">🩺 Rheumatology Clinic Toolbox</h1>
+
+    <!-- Tab Buttons -->
+    <div class="flex flex-wrap gap-2 justify-center mb-4">
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('injection')">Joint Injection</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('cdai')">RA / CDAI</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('dapsa')">PsA / DAPSA</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('mrss')">mRSS</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('pocus')">POCUS Doc</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('mdhaq')">MDHAQ / RAPID3</button>
+      <button class="tab-btn px-4 py-2 bg-blue-600 text-white rounded" onclick="showTab('basdai')">BASDAI</button>
+      <button class="tab-btn px-4 py-2 bg-yellow-600 text-white rounded" onclick="showTab('pred')">Prednisone Taper</button>
+      <button class="tab-btn px-4 py-2 bg-yellow-600 text-white rounded" onclick="showTab('plaquenil')">Plaquenil Tool</button>
+    </div>
+
+    <!-- Iframe Container -->
+    <div class="relative w-full h-[80vh] border rounded shadow-lg">
+      <iframe id="injection" src="https://www.rheumguide.ca/injection.html" class="tool-frame"></iframe>
+      <iframe id="cdai" src="https://www.rheumguide.ca/cdai.html" class="tool-frame hidden"></iframe>
+      <iframe id="dapsa" src="https://www.rheumguide.ca/dapsa.html" class="tool-frame hidden"></iframe>
+      <iframe id="mrss" src="https://www.rheumguide.ca/mrss.html" class="tool-frame hidden"></iframe>
+      <iframe id="pocus" src="https://www.rheumguide.ca/pocusdoc.html" class="tool-frame hidden"></iframe>
+      <iframe id="mdhaq" src="https://www.rheumguide.ca/mdhaq.html" class="tool-frame hidden"></iframe>
+      <iframe id="basdai" src="https://www.rheumguide.ca/basdai.html" class="tool-frame hidden"></iframe>
+      <iframe id="pred" src="https://www.rheumguide.ca/prednisone.html" class="tool-frame hidden"></iframe>
+      <iframe id="plaquenil" src="https://www.rheumguide.ca/plaquenil2" class="tool-frame hidden"></iframe>
+    </div>
+  </div>
+
+  <style>
+    .tool-frame {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+
+  <script>
+    function showTab(id) {
+      const frames = document.querySelectorAll('.tool-frame');
+      frames.forEach(frame => {
+        frame.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+
