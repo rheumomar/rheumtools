@@ -1,96 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rheum Clinic Tools</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXXXXX');
-function trackGA(path){
-gtag('event','page_view',{
-  page_title:path,
-  page_location:window.location.origin+path,
-  page_path:path
-});
-}
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-.tool-frame{position:absolute;width:100%;height:100%;border:none;visibility:hidden;pointer-events:none}
-.tool-frame.active{visibility:visible;pointer-events:auto;z-index:10}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rheum Clinic Tools</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+    function trackGA(path) {
+      gtag('event', 'page_view', {
+        page_title: path,
+        page_location: window.location.origin + path,
+        page_path: path
+      });
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tool-frame {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .tool-frame.active {
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 p-4">
-<div class="max-w-screen-2xl mx-auto">
-<h1 class="text-3xl font-bold mb-2 text-center text-blue-900">🩺 <a href="https://www.rheumguide.ca/" target="_blank">RheumGuide.ca</a>
- Clinic Toolbox</h1>
-<h2 class="text-xl font-semibold mb-4 text-center text-gray-700">🖥️ Developed by Dr. Ahmed Omar</h2>
-<div class="flex flex-wrap gap-2 justify-center mb-6 overflow-x-auto whitespace-nowrap">
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('cdai','/cdai.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">RA / CDAI</button>
-<a href="https://www.rheumguide.ca/cdai.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('dapsa','/dapsa.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">PsA / DAPSA</button>
-<a href="https://www.rheumguide.ca/dapsa.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('mrss','/mrss.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">mRSS</button>
-<a href="https://www.rheumguide.ca/mrss.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('injection','/injection.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">Injection</button>
-<a href="https://www.rheumguide.ca/injection.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('pocus','/pocusdoc.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">POCUS</button>
-<a href="https://www.rheumguide.ca/pocusdoc.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('mases','/mases.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">MASES</button>
-<a href="https://www.rheumguide.ca/mases.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('sparcc','/enthesitis.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">SPARCC</button>
-<a href="https://www.rheumguide.ca/enthesitis.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('mdhaq','/mdhaq.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ</button>
-<a href="https://www.rheumguide.ca/mdhaq.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('basdai','/basdai.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI</button>
-<a href="https://www.rheumguide.ca/basdai.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('plaquenil','/plaquenil2')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">Plaquenil</button>
-<a href="https://www.rheumguide.ca/plaquenil2" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-<div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
-<button onclick="showTab('pred','/prednisone.html')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">Prednisone</button>
-<a href="https://www.rheumguide.ca/prednisone.html" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
-</div>
-</div>
-<div class="relative w-full h-[80vh] border rounded shadow-lg">
-<iframe id="cdai" src="https://www.rheumguide.ca/cdai.html" class="tool-frame active" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="dapsa" src="https://www.rheumguide.ca/dapsa.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="mrss" src="https://www.rheumguide.ca/mrss.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="injection" src="https://www.rheumguide.ca/injection.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="pocus" src="https://www.rheumguide.ca/pocusdoc.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="mases" src="https://www.rheumguide.ca/mases.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="sparcc" src="https://www.rheumguide.ca/enthesitis.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="mdhaq" src="https://www.rheumguide.ca/mdhaq.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="basdai" src="https://www.rheumguide.ca/basdai.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="plaquenil" src="https://www.rheumguide.ca/plaquenil2" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-<iframe id="pred" src="https://www.rheumguide.ca/prednisone.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
-</div>
-</div>
-<script>
-function showTab(i,p){document.querySelectorAll(".tool-frame").forEach(e=>e.classList.remove("active"));document.getElementById(i).classList.add("active");trackGA(p);}
-</script>
+  <div class="max-w-screen-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2 text-center text-blue-900">
+      🩺 <a href="https://www.rheumguide.ca/" target="_blank">RheumGuide.ca</a> Clinic Toolbox
+    </h1>
+    <h2 class="text-xl font-semibold mb-4 text-center text-gray-700">🖥️ Developed by Dr. Ahmed Omar</h2>
+    <div class="flex flex-wrap gap-2 justify-center mb-6 overflow-x-auto whitespace-nowrap">
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('cdai','/cdai.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">RA / CDAI</button>
+        <a href="https://www.rheumguide.ca/cdai.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('dapsa','/dapsa.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">PsA / DAPSA</button>
+        <a href="https://www.rheumguide.ca/dapsa.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mrss','/mrss.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">mRSS</button>
+        <a href="https://www.rheumguide.ca/mrss.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('injection','/injection.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">Injection</button>
+        <a href="https://www.rheumguide.ca/injection.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('pocus','/pocusdoc.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">POCUS</button>
+        <a href="https://www.rheumguide.ca/pocusdoc.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mases','/mases.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">MASES</button>
+        <a href="https://www.rheumguide.ca/mases.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('sparcc','/enthesitis.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">SPARCC</button>
+        <a href="https://www.rheumguide.ca/enthesitis.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq','/mdhaq.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ</button>
+        <a href="https://www.rheumguide.ca/mdhaq.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai','/basdai.html')" class="bg-blue-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI</button>
+        <a href="https://www.rheumguide.ca/basdai.html" target="_blank" class="text-blue-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('plaquenil','/plaquenil2')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">Plaquenil</button>
+        <a href="https://www.rheumguide.ca/plaquenil2" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('pred','/prednisone.html')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">Prednisone</button>
+        <a href="https://www.rheumguide.ca/prednisone.html" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <!-- Pediatric Tools -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('pedenthesitis','/pedenthesitis.html')" class="bg-green-600 text-white px-4 py-1 rounded text-xs font-semibold">Ped Enthesitis</button>
+        <a href="https://www.rheumguide.ca/pedenthesitis.html" target="_blank" class="text-green-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('jdas','/jdas.html')" class="bg-green-600 text-white px-4 py-1 rounded text-xs font-semibold">JDAS</button>
+        <a href="https://www.rheumguide.ca/jdas.html" target="_blank" class="text-green-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+    </div>
+    <div class="relative w-full h-[80vh] border rounded shadow-lg">
+      <iframe id="cdai" src="https://www.rheumguide.ca/cdai.html" class="tool-frame active" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="dapsa" src="https://www.rheumguide.ca/dapsa.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mrss" src="https://www.rheumguide.ca/mrss.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="injection" src="https://www.rheumguide.ca/injection.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="pocus" src="https://www.rheumguide.ca/pocusdoc.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mases" src="https://www.rheumguide.ca/mases.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="sparcc" src="https://www.rheumguide.ca/enthesitis.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq" src="https://www.rheumguide.ca/mdhaq.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai" src="https://www.rheumguide.ca/basdai.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="plaquenil" src="https://www.rheumguide.ca/plaquenil2" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="pred" src="https://www.rheumguide.ca/prednisone.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <!-- Pediatric Tool Iframes -->
+      <iframe id="pedenthesitis" src="https://www.rheumguide.ca/pedenthesitis.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="jdas" src="https://www.rheumguide.ca/jdas.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+    </div>
+  </div>
+  <script>
+    function showTab(i, p) {
+      document.querySelectorAll(".tool-frame").forEach(e => e.classList.remove("active"));
+      document.getElementById(i).classList.add("active");
+      trackGA(p);
+    }
+  </script>
 </body>
 </html>
